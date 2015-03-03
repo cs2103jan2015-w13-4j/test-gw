@@ -32,8 +32,8 @@ public class AddTask {
 		DateTime endDate=dtf.parseDateTime(inputArray[ARRAY_INDEX_END_DATE]);
 		
 		
-			newTask=new Task(inputArray);
-			///////////// add to hashmap
+		newTask=new Task(inputArray);
+		///////////// add to hashmap
 		
 		if(inputArray[ARRAY_INDEX_REPEAT].equalsIgnoreCase("r")){
 			String delayType=inputArray[ARRAY_INDEX_DELAYTYPE];
@@ -63,9 +63,9 @@ public class AddTask {
 					endDate.plusYears(ONE_YEAR);
 					inputArray[ARRAY_INDEX_END_DATE]=endDate.toString();
 				}
+				newTask=new Task(inputArray);
+				///////////// add to hashmap
 			}
-			newTask=new Task(inputArray);
-			///////////// add to hashmap
 		}
 		return String.format(Message.MSG_SUCCESS, newTask.getTitle());
 	}
