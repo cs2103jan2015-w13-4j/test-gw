@@ -16,6 +16,8 @@ public class Task {
 	private String startTime;
 	private String endTime;
 	private boolean isDone;
+	private long startMilliseconds;
+	private long endMilliseconds;
 	
 	private static int ARRAY_INDEX_TITLE=0;
 	private static int ARRAY_INDEX_START_DATE=1;
@@ -25,6 +27,8 @@ public class Task {
 	private static int ARRAY_INDEX_REPEAT=5;
 	private static int ARRAY_INDEX_DELAYTYPE=6;
 	private static int ARRAY_INDEX_RECUR=7;;
+	private static int ARRAY_INDEX_START_MILLISECONDS=8;;
+	private static int ARRAY_INDEX_END_MILLISECONDS=9;;
 	
 	private static DateTimeFormatter dtf=DateTimeFormat.forPattern("dd/MM/yyyy");
 	
@@ -37,6 +41,9 @@ public class Task {
 		this.endDate=inputArray[ARRAY_INDEX_END_DATE]);
 		this.endTime=inputArray[ARRAY_INDEX_END_TIME]);
 		isDone=false;
+		startMilliseconds=Long.parseLong(inputArray[ARRAY_INDEX_START_MILLISECONDS]);
+		endMilliseconds=Long.parseLong(inputArray[ARRAY_INDEX_END_MILLISECONDS]);
+		
 	}
 	
 	public Task() {
