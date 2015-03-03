@@ -14,8 +14,8 @@ public class ListTask {
 		for (Task t : taskList){
 			
 			String title = t.getTitle();
-			String startDate = dateFormatter(t.getStartDate());
-			String endDate = dateFormatter(t.getEndDate());
+			String startDate = t.getStartDate();
+			String endDate = t.getEndDate();
 			String startTime = t.getStartTime();
 			String endTime = t.getEndTime();
 			
