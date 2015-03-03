@@ -32,30 +32,42 @@ public class Task {
 	
 	private static DateTimeFormatter dtf=DateTimeFormat.forPattern("dd/MM/yyyy");
 	
+	//default constructor
+	public Task(){}
+	
 	public Task(String[] inputArray){
-		this.title=inputArray[ARRAY_INDEX_TITLE]);
+		this.title=inputArray[ARRAY_INDEX_TITLE];
 		//this.description=inputArray[ARRAY_INDEX_TITLE]);
-		id=(int) Math.random();
-		this.startDate=inputArray[ARRAY_INDEX_START_DATE]);
-		this.startTime=inputArray[ARRAY_INDEX_START_TIME]);
-		this.endDate=inputArray[ARRAY_INDEX_END_DATE]);
-		this.endTime=inputArray[ARRAY_INDEX_END_TIME]);
-		isDone=false;
-		startMilliseconds=Long.parseLong(inputArray[ARRAY_INDEX_START_MILLISECONDS]);
-		endMilliseconds=Long.parseLong(inputArray[ARRAY_INDEX_END_MILLISECONDS]);
+		this.id=(int) Math.random();
+		this.startDate=inputArray[ARRAY_INDEX_START_DATE];
+		this.startTime=inputArray[ARRAY_INDEX_START_TIME];
+		this.endDate=inputArray[ARRAY_INDEX_END_DATE];
+		this.endTime=inputArray[ARRAY_INDEX_END_TIME];
+		this.isDone=false;
+		
+		this.startMilliseconds=Long.parseLong(inputArray[ARRAY_INDEX_START_MILLISECONDS]);
+		this.endMilliseconds=Long.parseLong(inputArray[ARRAY_INDEX_END_MILLISECONDS]);
 		
 	}
 	
-	public Task() {
-	
+	/*Used for importing all tasks from XML*/
+	public Task(int id, String title, long startMs, long endMs, boolean isDone){
+		this.id = id;
+		this.title = title;
+		this.startMilliseconds = startMs;
+		this.endMilliseconds = endMs;
+		this.isDone = isDone;
 	}
+	
 	public String getTitle(){
 		return title;
 	}
 	
+	/*
 	public String getDescription(){
 		return title;
 	}
+	*/
 	
 	public int getId(){
 		return id;
@@ -104,6 +116,7 @@ public class Task {
 	public void setEndDate(String endDate){
 		this.endDate=endDate;
 	}
+	
 	public void setIsDone(){
 		isDone=true;
 	}
@@ -118,7 +131,7 @@ public class Task {
 			return 1;
 		} 
 		else if(startDateOne.compareTo(startDateOne)<0){
-			return -1;*/
+			return -1;
 		}
 		return 0;
 	}*/
